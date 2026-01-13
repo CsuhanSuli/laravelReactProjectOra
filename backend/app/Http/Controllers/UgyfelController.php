@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\befiz;
 use App\Models\ugyfel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -57,7 +58,7 @@ class UgyfelController extends Controller
             {
                 return response()->json(["message"=>"elcseszted"],404);
             }
-        return response()->json($data->befiz);
+        return response()->json($data::with("befiz")->get());
     }
 
     /**
@@ -71,7 +72,7 @@ class UgyfelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ugyfel $ugyfel)
+    public function update(Request $request, int $id)
     {
         //
     }

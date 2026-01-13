@@ -11,6 +11,6 @@ class ugyfel extends Model
     protected $primaryKey = 'azon';
         public function befiz()
     {
-        return $this->belongsTo(befiz::class,"ugyfel_azon");
+        return $this->hasMany(befiz::class,"ugyfel_azon");
     }
 }

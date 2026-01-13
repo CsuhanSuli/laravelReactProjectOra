@@ -9,6 +9,6 @@ class befiz extends Model
     protected $table = "befiz";
     public function ugyfel()
     {
-        return $this->hasMany(ugyfel::class,"ugyfel_azon");
+        return $this->belongsTo(ugyfel::class,"ugyfel_azon");
     }
 }
